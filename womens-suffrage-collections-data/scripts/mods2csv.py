@@ -179,7 +179,7 @@ def prepMods(mods):
 def csvSetup(f):
     fieldnames = ['Source', 'Primary ID', 'Title', 'Alternative title', 'Contributor', 'Abstract', 'Date', 'Genre', 
               'Topical subject', 'Name subject' ,'Geographic subject', 'Title subject', 'Temporal subject',
-              'Language', 'Type of resource', 'Place of publication', 'Publisher', 'Form', 'Extent', 'Notes', 'Link', 'Image ID', 
+              'Language', 'Type of resource', 'Place of publication', 'Publisher', 'Form', 'Extent', 'Notes', 'Link', 
               'Image']
     writer = DictUnicodeWriter(f, fieldnames=fieldnames)
     #writer = csvkit.unicsv.UnicodeCSVDictWriter(f, fieldnames=fieldnames)
@@ -282,18 +282,24 @@ def modsToRow(item, source, writer):
             record['Contributor'] = ''
         titlepath = './titleInfo[@usage="primary"]'
         title = getTitles(t, titlepath)
-        if title is not None:
+        if len(title) > 0:
             record['Title'] = '|'.join(title)
+            alttitlepath = './titleInfo[not(@usage)]'
+            alttitle = getTitles(t, alttitlepath)
+            if alttitle is not None:
+                record['Alternative title'] = '|'.join(alttitle)
+            else:
+                record['Alternative title'] = ''
         else:
             titlepath = './titleInfo'
             title = getTitles(t, titlepath)
             record['Title'] = title[0]
-        alttitlepath = './titleInfo[not(@usage)]'
-        alttitle = getTitles(t, alttitlepath)
-        if alttitle is not None:
-            record['Alternative title'] = '|'.join(alttitle)
-        else:
-            record['Alternative title'] = ''
+            alttitlepath = './titleInfo[not(@usage)]'
+            alttitle = getTitles(t, alttitlepath)
+            if alttitle is not None:
+                record['Alternative title'] = '|'.join(alttitle[:end])
+            else:
+                record['Alternative title'] = ''
         datepath = './originInfo/dateCreated | ./originInfo/dateIssued'
         dates = getDates(t, datepath)
         if dates is not None:
