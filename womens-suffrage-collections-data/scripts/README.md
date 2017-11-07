@@ -14,9 +14,9 @@ To generate a CSV of items from an NYPL collection, run the `getNyplMods.py` scr
 
 This should create a new CSV file in your directory with a file name that reflects the source library and the collection uuid (ex. "nypl5e789350-c5dc-012f-1163-58d385a7bc34.csv")  
 
-To generate a CSV of items from a Library of Congress collection, run the `getLoCMods.py` script on the command line, including a collection slug from the digital collection URL as a second argument. (You can find this on any [Library of Congress digital collection page](https://www.loc.gov/collections/). NOTE that this script ONLY works with collections that have corresponding MODS records. Not all do! You can tell if a collection has MODS records if you click into an item page and see a link to "MODS Record" under "Additional Metadata Formats" near the bottom of the metadata details.):  
+To generate a CSV of items from a Library of Congress collection, run the `getLocMods.py` script on the command line, including a collection slug from the digital collection URL as a second argument. (You can find this on any [Library of Congress digital collection page](https://www.loc.gov/collections/). NOTE that this script ONLY works with collections that have corresponding MODS records. Not all do! You can tell if a collection has MODS records if you click into an item page and see a link to "MODS Record" under "Additional Metadata Formats" near the bottom of the metadata details.):  
 
-`>> python getLoCMods.py national-american-woman-suffrage-association`  
+`>> python getLocMods.py national-american-woman-suffrage-association`  
 
 This should create a new CSV file in your directory with a file name that reflects the source library and the collection uuid (ex. "loc_national-american-woman-suffrage-association.csv")   
 
