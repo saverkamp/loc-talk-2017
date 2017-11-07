@@ -1,4 +1,3 @@
-import csvkit
 import re
 import requests
 from lxml import etree as ET
@@ -283,7 +282,12 @@ def modsToRow(item, source, writer):
             record['Contributor'] = ''
         titlepath = './titleInfo[@usage="primary"]'
         title = getTitles(t, titlepath)
-        record['Title'] = '|'.join(title)
+        if title is not None:
+            record['Title'] = '|'.join(title)
+        else:
+            titlepath = './titleInfo'
+            title = getTitles(t, titlepath)
+            record['Title'] = title[0]
         alttitlepath = './titleInfo[not(@usage)]'
         alttitle = getTitles(t, alttitlepath)
         if alttitle is not None:
