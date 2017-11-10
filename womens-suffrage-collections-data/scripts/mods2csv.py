@@ -280,6 +280,19 @@ def modsToRow(item, source, writer):
             record['Contributor'] = '|'.join([rr['contributorName'] for rr in contributor])
         else:
             record['Contributor'] = ''
+        datepath = './originInfo/dateCreated | ./originInfo/dateIssued'
+        dates = getDates(t, datepath)
+        print dates
+        if len(dates['date']) > 0:
+            record['Date'] = '|'.join(dates['date'])
+        else:
+            record['Date'] = ''
+        notepath = './/note'
+        notes = getNotes(t, notepath)
+        if notes is not None:
+            record['Notes'] = '|'.join((rr['type'] + ': ' + rr['text']) for rr in notes)
+        else:
+            record['Notes'] = ''
         titlepath = './titleInfo[@usage="primary"]'
         title = getTitles(t, titlepath)
         if len(title) > 0:
@@ -294,24 +307,12 @@ def modsToRow(item, source, writer):
             titlepath = './titleInfo'
             title = getTitles(t, titlepath)
             record['Title'] = title[0]
-            alttitlepath = './titleInfo[not(@usage)]'
+            alttitlepath = './titleInfo'
             alttitle = getTitles(t, alttitlepath)
-            if alttitle is not None:
-                record['Alternative title'] = '|'.join(alttitle[:end])
+            if len(alttitle) > 1:
+                record['Alternative title'] = '|'.join(alttitle[1:])
             else:
                 record['Alternative title'] = ''
-        datepath = './originInfo/dateCreated | ./originInfo/dateIssued'
-        dates = getDates(t, datepath)
-        if dates is not None:
-            record['Date'] = '|'.join(dates['date'])
-        else:
-            record['Date'] = ''
-        notepath = './/note'
-        notes = getNotes(t, notepath)
-        if notes is not None:
-            record['Notes'] = '|'.join((rr['type'] + ': ' + rr['text']) for rr in notes)
-        else:
-            record['Notes'] = ''
     except:
         pass
     writer.writerow(record)

@@ -1,5 +1,5 @@
 import requests
-import xml.etree.ElementTree as ET
+from lxml import etree as ET
 import time
 import mods2csv
 import sys

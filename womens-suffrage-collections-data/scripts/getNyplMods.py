@@ -1,6 +1,7 @@
 import requests
 import configparser
-import xml.etree.ElementTree as ET
+from lxml import etree as ET
+#import xml.etree.ElementTree as ET
 import time
 import mods2csv
 import sys
