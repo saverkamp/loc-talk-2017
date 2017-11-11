@@ -202,12 +202,18 @@ def modsToRow(item, source, writer):
             record['Type of resource'] = '|'.join(typeofresource)
         else:
             record['Type of resource'] = ''
+        #preference language text over code
         langpath = 'language/languageTerm[@type="text"]'
         language = getValue(t, langpath)
         if language is not None:
             record['Language'] = '|'.join(language)
         else:
-            record['Language'] = ''
+            langpath = 'language/languageTerm[@type="code"]'
+            language = getValue(t, langpath)
+            if language is not None:
+                record['Language'] = '|'.join(language)
+            else:
+                record['Language'] = ''
         abspath = 'abstract'
         abstract = getValue(t, abspath)
         if abstract is not None:
@@ -282,7 +288,6 @@ def modsToRow(item, source, writer):
             record['Contributor'] = ''
         datepath = './originInfo/dateCreated | ./originInfo/dateIssued'
         dates = getDates(t, datepath)
-        print dates
         if len(dates['date']) > 0:
             record['Date'] = '|'.join(dates['date'])
         else:
@@ -304,6 +309,7 @@ def modsToRow(item, source, writer):
             else:
                 record['Alternative title'] = ''
         else:
+            #LoC doesn't use @usage attribute, so take the first instance of title as primary
             titlepath = './titleInfo'
             title = getTitles(t, titlepath)
             record['Title'] = title[0]
