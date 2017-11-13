@@ -6,7 +6,7 @@ Materials for an invited talk and workshop on metadata enrichment and collection
 
 ## Presentation  
 
-Slides available here.  
+Slides available at [http://bit.ly/Averkamp_NDSR_LoC](http://bit.ly/Averkamp_NDSR_LoC).  
 
 ## Workshop -- Exploring collections-as-data with Google Sheets
 
