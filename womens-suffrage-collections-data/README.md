@@ -67,5 +67,5 @@ The data was created by harvesting the MODS XML records through each collection'
 | Extent               | false    | string        | A pipe-delimited list of statements describing the size, length, or duration of the item.                                                                                                  |
 | Notes                | false    | string        | A pipe-delimited list of notes related to the content or physical condition of the item or content.                                                                                        |
 | Link                 | true     | string        | A URL pointing to the item's corresponding webpage at the source institution's digital collections website.                                                                                |
-| Image                | true     | string        | A term that specifies the characteristics and general type of content of the resource.                                                                                                     |
+| Image                | true     | string        | A URL pointing to a medium-sized image of the first page of the item.                                                                                                     |
 

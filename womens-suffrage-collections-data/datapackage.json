@@ -212,7 +212,7 @@
          "constraints": {
             "required": true
           },
-         "description": "A term that specifies the characteristics and general type of content of the resource."
+         "description": "A URL pointing to a medium-sized image of the first page of the item."
         }]
       }
     }
