@@ -6,11 +6,11 @@ Materials for an invited talk and workshop on metadata enrichment and collection
 
 ## Presentation  
 
-Slides available at [http://bit.ly/Averkamp_NDSR_LoC](http://bit.ly/Averkamp_NDSR_LoC).  
+Slides available at [http://bit.ly/Averkamp-NDSR_LoC](http://bit.ly/Averkamp-NDSR_LoC).  
 
 ## Workshop -- Exploring collections-as-data with Google Sheets
 
-(Full tutorial available [here](https://docs.google.com/document/d/1uNZ34FEn-vGwXc2SUFPrPLMt17mjMePNe6ZMdBQFME0/edit?usp=sharing).)  
+(Full tutorial available [here](https://docs.google.com/document/d/1lhrNEtVP7g_BCH6gIb44vujVFlDlMxCoQs4XytqMx8I/edit?usp=sharing).)  
 
 In this workshop, we’ll be learning how to use some basic and intermediate functionality of Google Sheets to familiarize ourselves with a new dataset and manipulate the data with the goal of plotting some digital collection items in [Timeline.js](https://timeline.knightlab.com/), an online timeline creation tool.   
 
@@ -29,7 +29,7 @@ Here are a few tips for working with spreadsheets or coding in general and makin
 We’ll be working with a tabular dataset I created from the MODS XML metadata of two digitized women’s suffrage collections from [NYPL](https://digitalcollections.nypl.org/collections/schwimmer-lloyd-collection#/about?tab=about) and [Library of Congress](https://www.loc.gov/collections/national-american-woman-suffrage-association/about-this-collection/). In my presentation, I talked about Frictionless Data packages as a standardized method of sharing data and related documentation. I’ve created one for this dataset in the [womens-suffrage-collections-data](https://github.com/saverkamp/loc-talk-2017/tree/master/womens-suffrage-collections-data) of this repo. Here you can access the data, read more about the dataset--context on the collections as well as information on how the data was created, and see the Python scripts I used to harvest and convert the data from MODS XML to CSV.   
 
 The data package above includes a CSV file you can import into Google Sheets (“File” > “Import...” > “Upload”) , BUT because of our short time today, let’s all: 
-1. Copy a [Google Sheet already loaded with the data](https://docs.google.com/spreadsheets/d/10cmbW74m600wy1xW-kTV1CEHQPLNR5DuIELEwjXucO0/edit?usp=sharing)
+1. Copy a [Google Sheet already loaded with the data](https://docs.google.com/spreadsheets/d/1r552L53cVeeb9GViW0yIF8bAZqFGLWc3ogugR6auSz8/edit?usp=sharing)
 2. In the upper left navigation, click “File” > “Make a copy”  
 3. You should get a prompt to rename your copy and put it in the Google Drive directory of your choosing. Click “OK”. You should now be in your copy of the data. Close the tab with the original data--you won’t need this again.  
 
@@ -38,4 +38,4 @@ We’ll be copying and pasting some of our data into another Google Sheet--a tem
 1. Go to [https://timeline.knightlab.com/](https://timeline.knightlab.com/) and click the “Make a Timeline” button.
 2. Under step 1, click the “Get the Spreadsheet Template” button. This will open a new tab in your browser and prompt you to make a copy. Click the “Make a copy” button. You should now have your own copy of the template Google Sheet. (You can rename this whatever you like.)  
 
-If you'd like to follow along or move at your pace, you can find a full tutorial for this workshop with screenshots [over here](https://docs.google.com/document/d/1uNZ34FEn-vGwXc2SUFPrPLMt17mjMePNe6ZMdBQFME0/edit?usp=sharing).  
+If you'd like to follow along or move at your pace, you can find a full tutorial for this workshop with screenshots [over here](https://docs.google.com/document/d/1lhrNEtVP7g_BCH6gIb44vujVFlDlMxCoQs4XytqMx8I/edit?usp=sharing).  
